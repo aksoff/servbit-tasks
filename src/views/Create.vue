@@ -3,14 +3,17 @@
     <div class="col-6 offset-6">
       <h2>Create</h2>
       <form>
-        <div class="input-field col s6">
+        <div class="input-field">
           <input placeholder="Title" id="title" type="text" class="validate" required>
+          <label for="title"></label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field">
           <input placeholder="Tags" id="tags" type="text" class="validate">
+          <label for="tags"></label>
         </div>
-        <div class="input-field col s6">
-          <textarea placeholder="Description" id="textarea" class="materialize-textarea"></textarea>
+        <div class="input-field">
+          <textarea placeholder="Description" id="description" class="materialize-textarea"></textarea>
+          <label for="description"></label>
         </div>
       </form>
     </div>
