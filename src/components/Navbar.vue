@@ -6,6 +6,7 @@
                 <router-link
                     to="/"
                     tag="li"
+                    active-class="active"
                 >
                     <a href="#">Create</a>
                 </router-link>
