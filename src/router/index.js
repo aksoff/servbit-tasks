@@ -1,4 +1,3 @@
-//aksoff
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Task from "../views/Task";
