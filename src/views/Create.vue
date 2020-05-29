@@ -4,21 +4,19 @@
       <h2>Create</h2>
       <form @submit.prevent="submitHandler">
         <div class="input-field">
-          <input v-model="title" placeholder="Title" id="title" type="text" class="validate" required>
-          <label for="title"></label>
+          <input v-model="title" id="title" type="text" class="validate" required>
+          <label for="title">Title</label>
           <span class="helper-text" data-error="Title is required"></span>
         </div>
-        <div v-model="tags" class="chips" ref="chips">
-
-        </div>
         <div class="input-field">
-          <textarea v-model="description" placeholder="Description" id="description" class="materialize-textarea"></textarea>
-          <label for="description"></label>
+          <textarea v-model="description" id="description" class="materialize-textarea"></textarea>
+          <label for="description">Description</label>
           <span class="character-counter" style="float: right; font-size: 12px">{{description.length}}/2048</span>
         </div>
+        <div v-model="tags" class="chips" id="tags" ref="chips"></div>
         <div class="input-field">
           <input v-model="deadline" type="text" id="deadline" class="datepicker" ref="datepicker">
-          <label for="deadline"></label>
+          <label for="deadline">Deadline</label>
         </div>
         <button class="btn" type="submit">Create task</button>
       </form>
@@ -41,7 +39,8 @@ export default {
   }),
   mounted() {
     this.tags = M.Chips.init(this.$refs.chips, {
-      placeholder: 'Task Tags'
+      placeholder: 'Task Tags',
+
     })
     this.deadline = M.Datepicker.init(this.$refs.datepicker, {
       format: 'dd.mm.yyyy',
