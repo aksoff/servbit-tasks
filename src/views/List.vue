@@ -4,12 +4,14 @@
         <hr>
         <table v-if="tasks.length">
             <thead>
+            <tr>
                 <th>#</th>
                 <th>Title</th>
                 <th>Date</th>
                 <th>Description</th>
                 <th>Status</th>
                 <th>open</th>
+            </tr>
             </thead>
             <tbody>
                 <tr v-for="(task, idx) of tasks"
