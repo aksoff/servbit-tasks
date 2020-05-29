@@ -37,7 +37,7 @@ export default {
     title: '',
     description: '',
     deadline: null,
-    tags: null
+    tags: null,
   }),
   mounted() {
     this.tags = M.Chips.init(this.$refs.chips, {
@@ -76,3 +76,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  #description {
+    min-height: 100px;
+  }
+</style>
