@@ -21,7 +21,7 @@
                     <td>{{task.title}}</td>
                     <td>{{new Date(task.deadline).toLocaleDateString()}}</td>
                     <td class="description"><div class="text">{{task.description}}</div></td>
-                    <td>{{task.status}}</td>
+                    <td><span class="new badge blue-grey">{{task.status}}</span></td>
                     <td>
                         <router-link tag="button" class="btn btn-small" :to="'/task/' + task.id">
                             Open
