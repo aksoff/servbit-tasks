@@ -11,6 +11,7 @@ export default new Vuex.Store({
     createTask(state, task) {
       state.tasks.push(task)
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
+      console.log(state.tasks)
     }
   },
   actions: {

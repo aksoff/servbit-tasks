@@ -63,7 +63,9 @@ export default {
         deadline: this.deadline.date,
         tags: this.tags.chipsData,
       }
+      this.$store.dispatch('createTask', task)
       console.log(task)
+      this.$router.push('/list')
     }
   },
   destroyed() {

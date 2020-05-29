@@ -7,12 +7,13 @@
                     to="/"
                     tag="li"
                     active-class="active"
-                >
+                exact>
                     <a href="#">Create</a>
                 </router-link>
                 <router-link
-                    to="/List"
+                    to="/list"
                     tag="li"
+                    active-class="active"
                 >
                     <a href="#">List</a>
                 </router-link>
