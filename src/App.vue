@@ -10,7 +10,10 @@
 <script>
   import Navbar from '@/components/Navbar'
   export default {
-    components: {Navbar}
+    components: {Navbar},
+    data: {
+      number: 42
+    }
   }
 </script>
 <style lang="scss">
