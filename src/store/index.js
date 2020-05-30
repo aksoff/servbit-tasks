@@ -21,6 +21,22 @@ export default new Vuex.Store({
       tasks[idx] = {...task, description, deadline, status}
       state.tasks = tasks
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
+    },
+    completeTask(state, id) {
+      const idx = state.tasks.findIndex(t => t.id === id)
+      state.tasks[idx].status = 'completed'
+      localStorage.setItem('tasks', JSON.stringify(state.tasks))
+    },
+    activateTask(state, id) {
+      const idx = state.tasks.findIndex(t => t.id === id)
+      state.tasks[idx].status = 'active'
+      localStorage.setItem('tasks', JSON.stringify(state.tasks))
+    },
+    deleteTask(state, id) {
+      const idx = state.tasks.findIndex(t => t.id === id)
+      state.tasks.splice(idx, 1)
+      //state.tasks.delete(idx)
+      localStorage.setItem('tasks', JSON.stringify(state.tasks))
     }
   },
   actions: {
@@ -30,6 +46,15 @@ export default new Vuex.Store({
     updateTask({commit}, task) {
       commit('updateTask', task)
     },
+    completeTask({commit}, id) {
+      commit('completeTask', id)
+    },
+    activateTask({commit}, id) {
+      commit('activateTask', id)
+    },
+    deleteTask({commit}, id) {
+      commit('deleteTask', id)
+    }
 
   },
   getters: {

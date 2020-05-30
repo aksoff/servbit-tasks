@@ -14,7 +14,10 @@
                     <input v-model="deadline" type="text" id="deadline" class="datepicker" ref="datepicker">
                     <label for="deadline"></label>
                 </div>
-                <button class="btn" type="submit">update task</button>
+                <button class="btn" type="submit">Update task</button>
+                <button v-if="task.status !== 'completed'" class="btn blue" type="button" @click="completeTask">Complete task</button>
+                <button v-else class="btn green" type="button" @click="activateTask">Activate task</button>
+                <button class="btn red" type="button" @click="deleteTask">Delete task</button>
             </form>
         </div>
         <p v-else>Task not found</p>
@@ -57,6 +60,18 @@
                     deadline: this.deadline.date
                 })
                 this.$router.push('/list')
+            },
+            completeTask() {
+                this.$store.dispatch('completeTask', this.task.id)
+                this.$router.push('/list')
+            },
+            activateTask() {
+                this.$store.dispatch('activateTask', this.task.id)
+                this.$router.push('/list')
+            },
+            deleteTask() {
+                this.$store.dispatch('deleteTask', this.task.id)
+                this.$router.push('/list')
             }
         },
         destroyed() {
@@ -71,5 +86,10 @@
 </script>
 
 <style scoped>
-
+    #description{
+        min-height: 100px;
+    }
+    button {
+        margin-right: 10px;
+    }
 </style>
