@@ -33,10 +33,11 @@ export default new Vuex.Store({
       localStorage.setItem('tasks', JSON.stringify(state.tasks))
     },
     deleteTask(state, id) {
-      const idx = state.tasks.findIndex(t => t.id === id)
-      state.tasks.splice(idx, 1)
-      //state.tasks.delete(idx)
-      localStorage.setItem('tasks', JSON.stringify(state.tasks))
+      if(confirm("Do you really want to delete?")) {
+        const idx = state.tasks.findIndex(t => t.id === id)
+        state.tasks.splice(idx, 1)
+        localStorage.setItem('tasks', JSON.stringify(state.tasks))
+        }
     }
   },
   actions: {

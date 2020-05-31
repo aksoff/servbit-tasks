@@ -9,7 +9,7 @@
                     <label for="description"></label>
                     <span class="character-counter" style="float: right; font-size: 12px">{{description.length}}/2048</span>
                 </div>
-                <div v-model="tags" class="chips" ref="chips"></div>
+                <div class="chips" ref="chips"></div>
                 <div class="input-field">
                     <input v-model="deadline" type="text" id="deadline" class="datepicker" ref="datepicker">
                     <label for="deadline"></label>
@@ -18,6 +18,7 @@
                 <button v-if="task.status !== 'completed'" class="btn blue" type="button" @click="completeTask">Complete task</button>
                 <button v-else class="btn green" type="button" @click="activateTask">Activate task</button>
                 <button class="btn red" type="button" @click="deleteTask">Delete task</button>
+                <router-link class="btn blue-grey lighten-4" to="/list">Back</router-link>
             </form>
         </div>
         <p v-else>Task not found</p>
@@ -70,8 +71,10 @@
                 this.$router.push('/list')
             },
             deleteTask() {
-                this.$store.dispatch('deleteTask', this.task.id)
-                this.$router.push('/list')
+                if(confirm('delete?????')){
+                    this.$store.dispatch('deleteTask', this.task.id)
+                    this.$router.push('/list')
+                }
             }
         },
         destroyed() {
