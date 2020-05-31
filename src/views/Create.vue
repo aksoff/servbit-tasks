@@ -13,7 +13,7 @@
           <label for="description">Description</label>
           <span class="character-counter" style="float: right; font-size: 12px">{{description.length}}/2048</span>
         </div>
-        <div v-model="tags" class="chips" id="tags" ref="chips"></div>
+        <div class="chips" id="tags" ref="chips"></div>
         <div class="input-field">
           <input v-model="deadline" type="text" id="deadline" class="datepicker" ref="datepicker">
           <label for="deadline">Deadline</label>
