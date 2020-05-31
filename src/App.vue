@@ -12,7 +12,7 @@
   export default {
     components: {Navbar},
     data: {
-      number: 42
+      number: 522
     }
   }
 </script>
