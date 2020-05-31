@@ -11,9 +11,6 @@
   import Navbar from '@/components/Navbar'
   export default {
     components: {Navbar},
-    data: {
-      number: 522
-    }
   }
 </script>
 <style lang="scss">
